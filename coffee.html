@@ -47,8 +47,31 @@
 
     // Set these variables to their DOM elements
 
-    var myImage;
-    var myRevenueMessage;
+    var myImage = document.getElementById("coffee-image");
+    myImage.setAttribute("src", "static/coffee_beans.jpg");
+
+    var myRevenueMessage = document.getElementById("revenue");
+
+    // revertToBeansImage function definition    
+    function revertToBeansImage() {
+        myImage.setAttribute("src", "static/coffee_beans.jpg");
+        console.log("I CHANGED THE IMAGE BACK TO BEANS!");  
+    }
+
+    // makeCoffee Function makes the image become a link to make coffee
+    function makeCoffee(evt) {
+        myImage.setAttribute("src", "static/coffee_machine.jpg");
+        console.log("I CHANGED THE IMAGE TO COFFEE MACHINE!");
+
+        setTimeout(myImage.setAttribute("src", "static/coffee_mug.jpg"), 1000);
+        console.log("I CHANGED THE IMAGE TO COFFEE MUG!");
+        
+        // console.dir(evt);    
+        setTimeout(revertToBeansImage, 1500);
+    }
+
+    myImage.addEventListener("click", makeCoffee);
+
 
     // use this JavaScript object in further study step
 
