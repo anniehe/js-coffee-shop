@@ -58,20 +58,24 @@
         console.log("I CHANGED THE IMAGE BACK TO BEANS!");  
     }
 
+    // changeToCoffeeMugImage function definition
+    function changeToCoffeeMugImage() {
+        myImage.setAttribute("src", "static/coffee_mug.jpg");
+        console.log("I CHANGED THE IMAGE TO COFFEE MUG!");
+    }
+
     // makeCoffee Function makes the image become a link to make coffee
     function makeCoffee(evt) {
         myImage.setAttribute("src", "static/coffee_machine.jpg");
         console.log("I CHANGED THE IMAGE TO COFFEE MACHINE!");
 
-        setTimeout(myImage.setAttribute("src", "static/coffee_mug.jpg"), 1000);
-        console.log("I CHANGED THE IMAGE TO COFFEE MUG!");
-        
+        setTimeout(changeToCoffeeMugImage, 1000);
+
         // console.dir(evt);    
         setTimeout(revertToBeansImage, 1500);
     }
 
     myImage.addEventListener("click", makeCoffee);
-
 
     // use this JavaScript object in further study step
 
